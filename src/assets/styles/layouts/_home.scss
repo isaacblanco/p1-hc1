@@ -1,0 +1,171 @@
+/* --- CLEAN ----------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: map-get($colors, "bg");
+  color: map-get($colors, "primary");
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-sans-serif;
+  font-size: $base-font-size;
+  height: 100vh;
+  line-height: 24px;
+  margin: 0;
+}
+
+h2 {
+  color: rgba(map-get($colors, "secondary"), 0.85);
+}
+
+h3 {
+  color: rgba(map-get($colors, "accent"), 0.85);
+}
+
+/* --- HEADER ----------*/
+
+.header {
+  align-items: center; /* Centrar en vertical */
+  background-image: url("./../../assets/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Repartiendo */
+  margin-bottom: 48px;
+  min-height: 200px;
+  padding: 0 20px;
+  text-align: center;
+
+  &__h1 {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 24px;
+    color: map-get($colors, "secondary");
+    flex: 1 0 100%;
+    font-family: $font-titles;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+
+    @include respond-to("small") {
+      flex: 1;
+      font-size: 36px;
+    }
+  }
+
+  &__nav {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex: 1 0 100%;
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+
+    @include respond-to("small") {
+      flex: 1;
+    }
+  }
+
+  &__ul {
+    display: flex; /* Nest flexbox for navigation items */
+  }
+
+  &__li {
+    margin: 0 10px; /* Add spacing between items */
+
+    a {
+      color: map-get($colors, "primary");
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    a:hover {
+      background-color: rgba(0, 0, 0, 0.2); /* Efecto hover effect */
+    }
+  }
+
+  &__li:first-child {
+    list-style-type: none;
+  }
+}
+
+/* --- MAIN ----------*/
+.main {
+  background-color: #414141;
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: auto;
+  max-width: 964px;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* --- SECTIONS IN MAIN ----------*/
+
+.section {
+  padding: $padding-section;
+
+  &__h2 {
+    font-family: $font-titles;
+    letter-spacing: 2px;
+  }
+
+  &__p {
+    border: 0;
+  }
+  &__a {
+    border: 0;
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+
+  li {
+    counter-increment: item;
+    text-align: left;
+  }
+
+  li::before {
+    content: counters(item, ".") ". ";
+    color: rgba(map-get($colors, "accent"), 0.9);
+    font-size: 20px;
+  }
+}
+
+/* --- FOOTER ----------*/
+.footer {
+  margin-top: 1.5rem;
+  text-align: center;
+
+  &__p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+  }
+}
+
+// Asegura la responsividad con media queries
+@include respond-to("medium") {
+  .header {
+    &__h1,
+    &__nav {
+      display: block;
+    }
+  }
+
+  .section {
+    padding: $padding-section * 0.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: $base-font-size * 1.5;
+  }
+}

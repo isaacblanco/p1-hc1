@@ -1,0 +1,40 @@
+@use "sass:color";
+
+// Fuentes
+$base-font-size: 16px;
+$font-titles: "Abril Fatface", serif;
+$font-family-sans-serif: poppins, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif: "Georgia", "Times New Roman", serif;
+
+// Colores
+$colors: (
+  "primary": #ffffff,
+  "secondary": #ffeb3a,
+  "accent": #ffbd00,
+  "dark": #414151,
+  "bg": #212121,
+);
+
+// Espaciado
+$padding-section: 20px;
+
+// Animaciones y estilos
+$transition-default: all 0.3s ease;
+
+// Medios
+$mqMinWidth: 420px;
+$mqMedWidth: 768px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: $mqMinWidth) {
+      @content;
+    }
+  } @else if $breakpoint == "medium" {
+    @media (max-width: $mqMedWidth) {
+      @content;
+    }
+  }
+}
