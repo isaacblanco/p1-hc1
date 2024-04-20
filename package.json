@@ -1,0 +1,20 @@
+{
+  "name": "p1-hc1",
+  "version": "1.0.0",
+  "description": "P1 HTML CSS I",
+  "scripts": {
+    "build": "parcel build p1-hc1/src/index.html",
+    "start": "parcel serve p1-hc1/src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Isaac Blanco",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "sass": "^1.72.0"
+  }
+}
