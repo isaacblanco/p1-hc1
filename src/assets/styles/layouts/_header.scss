@@ -33,11 +33,10 @@
 
   &__nav {
     background-color: rgba(0, 0, 0, 0.6);
-    display: flex; /* Use flexbox for horizontal layout */
-    flex: 1 0 100%;
     list-style: none; /* Remove default list styling */
     padding: 0;
     margin: 0;
+    width: 100%;
 
     @include respond-to("small") {
       flex: 1;
@@ -47,6 +46,7 @@
   &__ul {
     align-items: center;
     display: flex; /* Nest flexbox for navigation items */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -69,6 +69,12 @@
 
   &__li:first-child {
     list-style-type: none;
+  }
+
+  @include respond-to("small") {
+    &__li {
+      list-style-type: none;
+    }
   }
 }
 

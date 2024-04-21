@@ -11,6 +11,23 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <script>
+      // Jugando con JavaScript para incorporar algo
+      function loadAlbums() {
+        const albumsContainer = document.getElementById("albums");
+
+        data.albums.forEach((album) => {
+          const albumDiv = document.createElement("div");
+          albumDiv.className = "cat-album";
+          albumDiv.innerHTML = `
+                <img src="./assets/pictures/albums/${album.cover}" alt="Cover of ${album.title}">
+                <h3>${album.title}</h3>
+                <p>${album.year}</p>
+            `;
+          albumsContainer.appendChild(albumDiv);
+        });
+      }
+    </script>
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -19,6 +36,10 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
+
+    <div style="display: none">
+      <img src="./assets/pictures/albums/divisive.jpg" alt="" />
+    </div>
 
     <include src="./views/header.html"></include>
 
@@ -69,18 +90,21 @@
             </li>
           </ol>
         </section>
-        <section id="albums" class="section">
+        <section class="section">
           <h2 class="section__h2">Albums</h2>
-          <div class="albums"></div>
+          <div id="albums">
+            <div id="#albums"></div>
+          </div>
         </section>
       </div>
     </main>
 
     <include src="./views/footer.html"></include>
 
+    <script src="./assets/data.js"></script>
     <script type="module" src="./assets/scripts/main.js"></script>
     <script defer>
-      // loadAlbums();
+      document.addEventListener("DOMContentLoaded", loadAlbums);
     </script>
   </body>
 </html>

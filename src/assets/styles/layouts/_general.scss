@@ -16,8 +16,9 @@ body {
 }
 
 h1 {
-  text-transform: uppercase;
   margin-bottom: 24px;
+  text-transform: uppercase;
+  text-shadow: 0 8px 4px rgba(map-get($colors, "bg"), 0.85);
 }
 
 h2 {
@@ -36,6 +37,7 @@ a {
 .container {
   max-width: 968px;
   margin: 24px auto;
+  padding: 12px;
 
   @include respond-to("medium") {
     width: 100%;
@@ -155,6 +157,34 @@ cite {
   &:hover {
     background-color: rgba(map-get($colors, "accent"), 0.95);
     cursor: pointer;
+  }
+}
+
+/* Categoria */
+#albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.cat-album {
+  background-color: rgba(map-get($colors, "bg"), 0.85);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    min-height: 40px;
+    height: auto;
+  }
+
+  h3 {
+    margin: 10px 0 0;
+  }
+
+  p {
+    margin: 5px 0;
   }
 }
 
