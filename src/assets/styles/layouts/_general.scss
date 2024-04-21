@@ -17,6 +17,7 @@ body {
 
 h1 {
   text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
 h2 {
@@ -24,11 +25,22 @@ h2 {
 }
 
 h3 {
+  color: rgba(map-get($colors, "secondary"), 0.85);
+}
+
+a {
   color: rgba(map-get($colors, "accent"), 0.85);
 }
 
 /* --- MAIN ----------*/
-.main {
+.container {
+  max-width: 968px;
+  margin: 24px auto;
+
+  @include respond-to("medium") {
+    width: 100%;
+    padding: 24px;
+  }
 }
 
 h1 {
@@ -73,6 +85,38 @@ ol {
   }
 }
 
+.page-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.page-nav-buttons button {
+  background-color: rgba(map-get($colors, "accent"), 0.85);
+  border: 0;
+  border-radius: 8px;
+  color: map-get($colors, "primary");
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-shadow: 0 3px 2px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease-in-out;
+}
+
+.page-nav-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Efecto hover effect */
+}
+
+cite {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 2px solid #ff6644;
+  display: block;
+  font-style: italic;
+  font-weight: 600;
+  padding: 6px 6px 6px 24px;
+}
+
 // Asegura la responsividad con media queries
 @include respond-to("medium") {
   .section {
@@ -93,9 +137,39 @@ ol {
 }
 
 .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Make the iframe fill the container */
-  height: 100%; /* Make the iframe fill the container */
+  max-width: 100%;
+}
+
+.button-link {
+  background-color: rgba(map-get($colors, "accent"), 0.55);
+  border: 0;
+  border-radius: 8px;
+  color: rgba(map-get($colors, "primary"), 0.85);
+  display: inline-block;
+  font-size: $base-font-size;
+  font-weight: 600;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: rgba(map-get($colors, "accent"), 0.95);
+    cursor: pointer;
+  }
+}
+
+/* Enlaces*/
+.enlace__h3 {
+  color: rgba(map-get($colors, "primary"), 0.85);
+  font-weight: 400;
+}
+
+.enumeraciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.enumeraciones strong {
+  color: rgba(map-get($colors, "secondary"), 0.85);
 }
