@@ -36,3 +36,9 @@
 | `npm run build` | Realiza la compilación minificando los ficheros. El resultado se va a la carpeta `dist/`. Dicha carpeta es la que se publica en la web. |
 | `npm run clean` | Borra el contenido `/dist` y la cache.                                                                                                  |
 | `npm run test`  | Muestra si todo esta funcionando.                                                                                                       |
+
+### Datos
+
+Servidor local: http://localhost:8123
+Repositorio git: https://github.com/isaacblanco/p1-hc1
+Servidor internet: https://p1-htmlcssi-ibp.netlify.app |
